@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout con Grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas:
+                "header header header header"
+                "side1 contenido contenido side2"
+                "footer footer footer footer";
+            grid-template-columns: 1fr 2fr 2fr 1fr;
+            grid-template-rows: auto 1fr auto;
+            gap: 10px;
+            height: 100vh;
+            padding: 10px;
+        }
+
+        header {
+            grid-area: header;
+            background-color: #FFD700;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .side1, .side2 {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .side1 {
+            grid-area: side1;
+            background-color: #FFA07A;
+            padding: 10px;
+        }
+
+        .side2 {
+            grid-area: side2;
+            background-color: #FFA07A;
+            padding: 10px;
+        }
+
+        .side1-top, .side1-bottom, .side2-top, .side2-bottom {
+            background-color: #FFE4B5;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            grid-area: contenido;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            background-color: #87CEEB;
+            padding: 10px;
+            border: 2px solid #000;
+        }
+
+        .contenido-1, .contenido-2, .contenido-3 {
+            background-color: #F0E68C;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #000;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: #FF6347;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>Header</header>
+        <aside class="side1">
+            <div class="side1-top">Side 1 </div>
+            <div class="side1-bottom">Side 1</div>
+        </aside>
+        <main>
+            <div class="contenido-1">Texto 1: <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> </div>
+            <div class="contenido-2">Texto 2: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+            <div class="contenido-3">Texto 3: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</div>
+        </main>
+        <aside class="side2">
+            <div class="side2-top">Side 2 </div>
+            <div class="side2-bottom">Side 2</div>
+        </aside>
+        <footer>Realizado por: Ivette Sharon Lima Guachalla</footer>
+    </div>
+</body>
+</html>
